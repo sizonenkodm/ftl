@@ -49,7 +49,6 @@ function App() {
 	}, [sort, category]);
 
 	useEffect(() => {
-		// localStorage.setItem('category', category);
 		setFetching(true);
 	}, [search]);
 
