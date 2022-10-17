@@ -35,22 +35,23 @@ function App() {
 	];
 
 	const scrollHandler = (event) => {
-		if ((event.target.documentElement.scrollHeight - (event.target.documentElement.scrollTop + window.innerHeight) < 100) && cards.length < totalCount) {
+		if ((event.target.documentElement.scrollHeight - (event.target.documentElement.scrollTop + window.innerHeight) < 200) && cards.length < totalCount) {
 			setFetching(true);
 		}
 	}
 
 	useEffect(() => {
 		localStorage.setItem('sort', sort);
+		localStorage.setItem('category', category);
 		setCards([]);
 		setCurrentPage(1);
 		setFetching(true);
-	}, [sort]);
+	}, [sort, category]);
 
 	useEffect(() => {
-		localStorage.setItem('category', category);
+		// localStorage.setItem('category', category);
 		setFetching(true);
-	}, [search, category]);
+	}, [search]);
 
 	useEffect(() => {
 		if (fetching) {
