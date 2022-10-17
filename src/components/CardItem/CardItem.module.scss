@@ -1,0 +1,47 @@
+@mixin borderRadius($br) {
+    -moz-border-radius: $br;
+    -webkit-border-radius: $br;
+    border-radius: $br;
+}
+
+.card {
+    border: 2px solid lightgray;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(163, 158, 158);
+    @include borderRadius(10px);
+
+    @media (min-width: 551px) {
+        -moz-box-shadow: 10px 0px 10px 5px gray;
+        -webkit-box-shadow: 10px 0px 10px 5px gray;
+        box-shadow: 10px 0px 10px 5px gray;
+    }
+    &__price {
+        text-align: center;
+        font-size: 20px;
+        font-style: italic;
+        color: #fff;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        @include borderRadius(10px);
+    }
+    &__img {
+        border: 2px solid lightgray;
+        width: 60%;
+        height: 60%;
+        background-color: rgb(244, 238, 238);
+        @include borderRadius(10px);
+    }
+    &__info {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        font-style: italic;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        @include borderRadius(10px);
+    }
+}
